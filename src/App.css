@@ -1,0 +1,211 @@
+/* General Styling */
+:root {
+  --bg-color-light: #f4f6f9;
+  --text-color-light: #333;
+  --button-bg-light: #007bff;
+  --button-hover-bg-light: #0056b3;
+  --todo-item-bg-light: #ffffff;
+  --todo-item-bg-hover-light: #e6e6e6;
+  --input-bg-light: #ffffff;
+  --border-color-light: #ccc;
+
+  /* Dark mode variables */
+  --bg-color-dark: #181818;
+  --text-color-dark: #f1f1f1;
+  --button-bg-dark: #ff4081;
+  --button-hover-bg-dark: #d500f9;
+  --todo-item-bg-dark: #2c2c2c;
+  --todo-item-bg-hover-dark: #444444;
+  --input-bg-dark: #333333;
+  --border-color-dark: #444444;
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode */
+.dark {
+  background-color: var(--bg-color-dark);
+}
+
+.dark .app {
+  background-color: var(--bg-color-dark);
+}
+
+.dark button {
+  background-color: var(--button-bg-dark);
+}
+
+.dark button:hover {
+  background-color: var(--button-hover-bg-dark);
+}
+
+.dark .todo-item {
+  background-color: var(--todo-item-bg-dark);
+}
+
+.dark .todo-item:hover {
+  background-color: var(--todo-item-bg-hover-dark);
+}
+
+.dark input {
+  background-color: var(--input-bg-dark);
+  color: var(--text-color-dark);
+  border-color: var(--border-color-dark);
+}
+
+.dark .todo-item.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+
+/* Light Mode (default) */
+.app {
+  width: 90%;
+  max-width: 650px;
+  margin: 50px auto;
+  background-color: var(--bg-color-light);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: var(--text-color-light);
+}
+
+button {
+  padding: 12px 20px;
+  background-color: var(--button-bg-light);
+  color: white;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-left: 10px;
+}
+
+button:hover {
+  background-color: var(--button-hover-bg-light);
+  transform: translateY(-2px);
+}
+
+.toggle-button {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 8px;
+  background-color: var(--button-bg-light);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.toggle-button:hover {
+  background-color: var(--button-hover-bg-light);
+}
+
+.input-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+input {
+  width: 75%;
+  padding: 12px;
+  font-size: 1.1em;
+  border: 2px solid var(--border-color-light);
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+  background-color: var(--input-bg-light);
+}
+
+input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.todo-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-item {
+  background-color: var(--todo-item-bg-light);
+  padding: 18px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease;
+}
+
+.todo-item:hover {
+  background-color: var(--todo-item-bg-hover-light);
+}
+
+.todo-item.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.delete-btn {
+  background-color: red;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: darkred;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 600px) {
+  .app {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .input-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
